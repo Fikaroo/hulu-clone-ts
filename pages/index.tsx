@@ -34,7 +34,7 @@ export const getServerSideProps = async (context: {
   const genre = context.query.genre;
 
   const request = await axios
-    .get(`${BASE_URL}${requests[genre].url || requests.fetchTrending.url}`)
+    .get(`${BASE_URL}${requests[genre]?.url || requests.fetchTrending.url}`)
     .then((res) => res.data);
 
   return {
